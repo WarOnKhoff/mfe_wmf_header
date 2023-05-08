@@ -8,7 +8,7 @@ const HEADER_URL = process.env.HEADER_URL || "http://localhost:3000"
 const deps = require("./package.json").dependencies
 module.exports = (_, argv) => ({
 	output: {
-		publicPath: HEADER_URL
+		publicPath: `${HEADER_URL}/`
 	},
 
 	resolve: {
