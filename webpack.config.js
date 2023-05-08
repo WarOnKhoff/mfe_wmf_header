@@ -1,12 +1,14 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin")
 require("dotenv").config()
+
 const HOST_URL = process.env.HOST_URL || "http://localhost:8080"
+const HEADER_URL = process.env.HEADER_URL || "http://localhost:3000"
 
 const deps = require("./package.json").dependencies
 module.exports = (_, argv) => ({
 	output: {
-		publicPath: "http://localhost:3000/"
+		publicPath: HEADER_URL
 	},
 
 	resolve: {
